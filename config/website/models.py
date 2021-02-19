@@ -10,6 +10,7 @@ class Funcionario(models.Model):
 
     def __str__(self):
         return f'Funcionario {self.nome}'
+        
 
 class Clientes(models.Model):
     nome = models.CharField(max_length=100, null=False, blank=False)

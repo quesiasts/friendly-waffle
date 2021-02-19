@@ -4,6 +4,9 @@ from .models import Funcionario, Clientes, Produtos
 from .serializers import FuncionarioSerializer, ClientesSerializer, ProdutosSerializer
 
 
+def index(request):
+    return HttpResponse('Bem-vindo ao Website')
+
 class FuncionarioViewSet(viewsets.ModelViewSet):
     queryset = Funcionario.objects.all().order_by('nome')
     serializer_class = FuncionarioSerializer
@@ -15,6 +18,3 @@ class ClientesViewSet(viewsets.ModelViewSet):
 class ProdutosViewSet(viewsets.ModelViewSet):
     queryset = Produtos.objects.all().order_by('nome')
     serializer_class = ProdutosSerializer
-
-    def index(request):
-        return HttpResponse('Bem vindo ao website')
